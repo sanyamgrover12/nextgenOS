@@ -7,7 +7,7 @@ pipeline {
                 withAWS(region:'ap-south-1',credentials:'AWS-sanyam09') {
                     s3Download(
                         file: "availableOSVersions.json",
-                        bucket:'sanyam-jenkins-bucket',
+                        bucket:'sanyam-jenkins-bucket1',
                         path: 'dev/availableOSVersions.json',
                         force: true
                     )
@@ -42,7 +42,7 @@ pipeline {
                         pathStyleAccessEnabled: true,
                         payloadSigningEnabled: true,
                         file: "availableOSVersions.json",
-                        bucket: 'sanyam-jenkins-bucket',
+                        bucket: 'sanyam-jenkins-bucket1',
                         path: "dev/"
                         
                     )
@@ -60,7 +60,7 @@ pipeline {
                             pathStyleAccessEnabled: true,
                             payloadSigningEnabled: true,
                             file: "os-update-pkg.zip",
-                            bucket: 'sanyam-jenkins-bucket',
+                            bucket: 'sanyam-jenkins-bucket1',
                             path: 'dev' + '/' + "$path_name" + '/'
                         )
                     }
