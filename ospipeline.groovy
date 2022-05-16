@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Json Download from AWS') {
             steps {
-                withAWS(region:'ap-south-1',credentials:'AWS') {
+                withAWS(region:'ap-south-1',credentials:'AWS-sanyam09') {
                     s3Download(
                         file: "availableOSVersions.json",
                         bucket:'sanyam-jenkins-bucket',
@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Upload Json to AWS') {
             steps {
-                withAWS(region:'ap-south-1',credentials:'AWS') {
+                withAWS(region:'ap-south-1',credentials:'AWS-sanyam09') {
                     s3Upload(
                         pathStyleAccessEnabled: true,
                         payloadSigningEnabled: true,
