@@ -53,7 +53,7 @@ pipeline {
         stage('Upload Zip to AWS') {
             steps {
                 script{
-                    withAWS(region:'ap-south-1',credentials:'AWS') {
+                    withAWS(region:'ap-south-1',credentials:'AWS-sanyam09') {
                         def now = new Date()
                         path_name = (now.format("yyyyMMdd") + "_OS_Update")
                         s3Upload(
