@@ -38,11 +38,12 @@ pipeline {
             steps {
                 withAWS(region:'ap-south-1',credentials:'AWS-sanyam09') {
                     s3Upload(
-                        pathStyleAccessEnabled: true,
-                        payloadSigningEnabled: true,
+                       // pathStyleAccessEnabled: true,
+                       // payloadSigningEnabled: true,
                         file: "availableOSVersions.json",
                         bucket: 'sanyam-jenkins-bucket',
                         path: "dev/"
+                        
                     )
                 }
             }
