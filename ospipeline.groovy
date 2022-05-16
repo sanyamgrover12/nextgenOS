@@ -36,6 +36,7 @@ pipeline {
         }
         stage('Upload Json to AWS') {
             steps {
+                script{
                 withAWS(region:'ap-south-1',credentials:'AWS-sanyam09') {
                     s3Upload(
                         pathStyleAccessEnabled: true,
@@ -46,6 +47,7 @@ pipeline {
                         
                     )
                 }
+              }
             }
         }
         stage('Upload Zip to AWS') {
